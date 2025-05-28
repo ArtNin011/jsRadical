@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IW2A</title>
+    </head>
+    <body>
+        <div>
+            <p>Nome: </p>
+            <p><input type="text" name="nome" id="nome"></p>
+            <p>Email: </p>
+            <p><input type="text" name="email" id="email"></p>
+            <p><input type="button" id="bt" value="Cadastrar"></p>
+        </div>
+    </body>
 
-<script src="js/array.js"></script>
+<script>
+    let rafh = new Array();
+    let trein = document.getElementById('bt');
+    let nome = document.getElementById('nome');
+    let email = document.getElementById('email');
+
+    trein.onclick = function(){
+        rafh.push({
+            nome: nome.value, 
+            email: email}
+        );
+
+        rafh.forEach(element => {
+            //document.write(`<p>${element}</p>`);
+            console.log(element);
+        });
+    }
+</script>
 </html>
