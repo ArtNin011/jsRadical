@@ -15,60 +15,47 @@
         </div>
     </body>
 
-<script>
-    let rafh = new Array();
-    let trein = document.getElementById('bt');
-    let nome = document.getElementById('nome');
-    let email = document.getElementById('email');
-    
-    trein.onclick = function(){
-        rafh.push({
-            nome: nome.value,
-            email: email.value
-        });
+    <script>
+        let rafh = new Array();
+        let trein = document.getElementById('bt');
+        let nome = document.getElementById('nome');
+        let email = document.getElementById('email');
+        
+        trein.onclick = function(){
+            rafh.push({
+                nome: nome.value + " ",
+                email: email.value
+            });
 
-        rafh.forEach(element => {
-            //document.write(`<p>${element}</p>`);
-            console.log(element);
-        });
-
-        for(const key in rafh){
-            console.log(rafh[key]);
-        }
-
-        console.log(rafh[0].nome);
-
-
-        //criar elementos
-
-         for(const key in rafh){
-            let bora = document.createElement("p");
-            let bill = document.createTextNode(rafh[key].nome);
-            let noruega = document.createTextNode(rafh[key].email);
-          
-            bora.appendChild(bill);
-            bora.appendChild(noruega);
-
-            let receba = document.body;
-
-
-            receba.appendChild(bill);
-            receba.appendChild(noruega);
          
+
+            for(const key in rafh){
+                console.log(rafh[key]);
+            }
+
+            console.log(rafh[0].nome);
+
+
+            // criar elementos
+
+            for(const key in rafh){
+                let bora = document.createElement("p");
+                let bill = document.createTextNode(rafh[key].nome);
+                let noruega = document.createTextNode(rafh[key].email);
+
+                bora.appendChild(bill);
+                bora.appendChild(noruega);        
+
+                let receba = document.body;
+
+                receba.appendChild(bora);
+                rafh.pop();
+                
+            };
+            
         }
 
-
-        // rafh.forEach(element =>{
-        //     let bora = document.createElement("p");
-        //     let bill = document.createTextNode(rafhy);
-
-        //     bora.appendChild(bill);
-
-        //     let receba = document.body;
-        //     receba.appendChild(bill);
-        // });
-
+        
        
-    }
-</script>
+    </script>
 </html>
